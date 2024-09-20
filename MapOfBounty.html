@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Map of bounty</title>
+  <style> body { background-color: rgb(185, 171, 45); } </style>
+  <script>
+    window.onload = init;
+
+    function init () {
+      var move = document.getElementById("map");
+      move.onmousemove = searchCoord;
+    }
+
+    function searchCoord (objMap) {
+      var x = objMap.clientX;
+      var y = objMap.clientY;
+      console.log(x, y);
+      var map = document.getElementById("coord");
+      map.innerHTML = "Treasure chest have those coordinates: " + x + ", " + y;
+      
+    }
+  </script>
+</head>
+<body>
+  <img id="map" src="map.jpg">
+  <p id="coord">If you want to be rich, my fearsome pirate, then find a treasure chest!</p>
+</body>
+</html>
